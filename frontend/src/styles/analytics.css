@@ -1,0 +1,306 @@
+.analytics-page {
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    min-height: calc(100vh - 80px);
+}
+
+.analytics-container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.analytics-header {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.analytics-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+.analytics-subtitle {
+    color: var(--text-secondary);
+    max-width: 600px;
+}
+
+/* Comparison Section */
+.comparisons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+}
+
+@media (max-width: 768px) {
+    .comparisons-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.comparison-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+}
+
+.comparison-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-xl);
+}
+
+.comparison-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+.comparison-desc {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.speedup-badge {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent-emerald);
+}
+
+/* Bar Charts */
+.bar-chart {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.bar-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.bar-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bar-name {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.bar-icon {
+    width: 24px;
+    height: 24px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+}
+
+.bar-value {
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-family: var(--font-mono);
+    color: var(--text-secondary);
+}
+
+.bar-track {
+    height: 24px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    position: relative;
+}
+
+.bar-fill {
+    height: 100%;
+    border-radius: var(--radius-md);
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: var(--spacing-sm);
+}
+
+.bar-fill.slow {
+    background: linear-gradient(90deg, #64748b 0%, #94a3b8 100%);
+}
+
+.bar-fill.fast {
+    background: var(--gradient-primary);
+}
+
+.bar-fill.js {
+    background: linear-gradient(90deg, #f59e0b 0%, #fbbf24 100%);
+}
+
+.bar-fill.wasm {
+    background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+}
+
+/* Metrics Grid */
+.metrics-section {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.metrics-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xl);
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.metric-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    transition: var(--transition-base);
+}
+
+.metric-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.metric-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.metric-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+.metric-info h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.metric-info p {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.metric-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--spacing-sm);
+}
+
+.metric-comparison {
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+}
+
+.metric-comparison span {
+    color: var(--accent-emerald);
+    font-weight: 600;
+}
+
+/* Benchmark Table */
+.benchmark-section {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    overflow-x: auto;
+}
+
+.benchmark-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-lg);
+}
+
+.benchmark-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.benchmark-table th,
+.benchmark-table td {
+    padding: var(--spacing-md);
+    text-align: left;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.benchmark-table th {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.benchmark-table td {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.benchmark-table tr:last-child td {
+    border-bottom: none;
+}
+
+.benchmark-table tr:hover td {
+    background: rgba(99, 102, 241, 0.05);
+}
+
+.task-name {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.task-icon {
+    font-size: 1rem;
+}
+
+.winner-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: rgba(16, 185, 129, 0.15);
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent-emerald);
+}
